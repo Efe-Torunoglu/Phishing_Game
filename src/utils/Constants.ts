@@ -7,9 +7,12 @@ export interface EmailData {
 }
 
 export class Constants {
+
+    // Window Heights 
     public static WINDOW_WIDTH = 800
     public static WINDOW_HEIGHT = 600
 
+    // Recipients 
     public static RECIPIENTS = [
         'marth@bmail.com',
         'luigi@bmail.com',

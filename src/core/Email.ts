@@ -2,6 +2,8 @@ import Game from "../scenes/Game"
 import { EmailData } from "../utils/Constants"
 
 export default class Email {
+
+    // Variables
     public fromText: Phaser.GameObjects.Text
     public toText: Phaser.GameObjects.Text
     public bodyText: Phaser.GameObjects.Text
@@ -20,9 +22,9 @@ export default class Email {
     // Setter Method 
     setNewEmail(emailData: EmailData) {
         this.fromText.setText(`From: ${emailData.from}`)
-        this.toText.setText(`From: ${emailData.to}`)
-        this.subjectLine.setText(`From: ${emailData.subjectLine}`)
-        this.bodyText.setText(`From: ${emailData.body}`)
+        this.toText.setText(`To: ${emailData.to}`)
+        this.subjectLine.setText(`Subject: ${emailData.subjectLine}`)
+        this.bodyText.setText(`Body: ${emailData.body}`)
 
     }
 }

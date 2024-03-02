@@ -1,7 +1,11 @@
 import Email from '../core/Email'
 import { Constants } from '../utils/Constants'
 
+
+// Create Game Class 
 export default class Game extends Phaser.Scene {
+
+    // Class Variables
     public email: Email
     public nextButton: Phaser.GameObjects.Text
     
