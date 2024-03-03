@@ -1,14 +1,17 @@
 import Email from '../core/Email'
+import Lives from '../core/Lives'
 import { Constants, EmailData } from '../utils/Constants'
 
 // Create Game Class
 export default class Game extends Phaser.Scene {
   // Class Variables
   public email: Email
+  public lives: Lives
   public emailData: EmailData[] = Constants.RAW_EMAIL_DATA
   public currEmailIndex = 0
   public numCorrect = 0
   public numIncorrect = 0
+  
 
   // Accept & Deny buttons
   public acceptButton: Phaser.GameObjects.Text
@@ -18,6 +21,9 @@ export default class Game extends Phaser.Scene {
   create() {
     // Create Email Object
     this.email = new Email(this, this.emailData[this.currEmailIndex])
+    
+    // Create Lives Object
+    this.lives = new Lives(this)
 
     // Create Button
     this.acceptButton = this.add
@@ -58,6 +64,7 @@ export default class Game extends Phaser.Scene {
       this.numCorrect++
     } else {
       this.numIncorrect++
+      this.lives.decrementLife()
     }
     this.scoreText.setText(
       `Correct: ${this.numCorrect}\nIncorrect: ${this.numIncorrect}`

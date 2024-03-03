@@ -11,6 +11,7 @@ export class Constants {
     // Window Heights 
     public static WINDOW_WIDTH = 800
     public static WINDOW_HEIGHT = 600
+    public static NUM_LIVES = 3 
 
     // Recipients 
     public static RECIPIENTS = [
