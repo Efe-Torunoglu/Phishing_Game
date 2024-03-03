@@ -17,7 +17,7 @@ export default class Email {
     this.subjectLine = this.game.add.text(
       100,
       200,
-      `SUBJECT: ${emailData.subjectLine}`
+      `Subject: ${emailData.subjectLine}`
     )
     this.bodyText = this.game.add.text(100, 250, emailData.body)
   }
