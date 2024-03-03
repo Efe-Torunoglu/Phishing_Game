@@ -6,7 +6,7 @@ import { Constants, EmailData } from '../utils/Constants'
 // Create Game Class
 export default class Game extends Phaser.Scene {
   
-    // Class Variables
+  // Class Variables
   public email: Email
   public lives: Lives
   public emailData: EmailData[] = Constants.RAW_EMAIL_DATA
@@ -24,7 +24,6 @@ export default class Game extends Phaser.Scene {
     {
         super({ key: 'Game' });
     }
-  
 
   create() {
     // Create Email Object
@@ -76,6 +75,10 @@ export default class Game extends Phaser.Scene {
     
       // Check if this dude is headed to the Shadow Realm
       if(this.lives.numLives == 0){
+
+        // Reset 
+        this.numCorrect = 0
+        this.numIncorrect = 0
         this.scene.start('shadowRealm');
       }
 

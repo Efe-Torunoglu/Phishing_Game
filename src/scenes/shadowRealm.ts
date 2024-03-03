@@ -12,7 +12,7 @@ export default class shadowRealm extends Phaser.Scene {
     }
 
     create(){
-        
+
         this.gameOverText = this.add.text(100,100,"GAME OVER")
         this.newGameButton = this.add.text(100,150, "NEW GAME?")
         
