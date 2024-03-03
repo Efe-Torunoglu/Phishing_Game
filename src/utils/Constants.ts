@@ -26,7 +26,7 @@ export class Constants {
     public static RAW_EMAIL_DATA: EmailData[] = [
         {
             subjectLine: 'Big  time',
-            body: 'Hello, make ',
+            body: 'Hello, make    :DDDD',
             from: 'Boogle <larry@menuwand.com>',
             to: Phaser.Utils.Array.GetRandom(this.RECIPIENTS),
             isReal: false

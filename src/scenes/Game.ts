@@ -1,10 +1,12 @@
+import Phaser from 'phaser'
 import Email from '../core/Email'
 import Lives from '../core/Lives'
 import { Constants, EmailData } from '../utils/Constants'
 
 // Create Game Class
 export default class Game extends Phaser.Scene {
-  // Class Variables
+  
+    // Class Variables
   public email: Email
   public lives: Lives
   public emailData: EmailData[] = Constants.RAW_EMAIL_DATA
@@ -12,11 +14,17 @@ export default class Game extends Phaser.Scene {
   public numCorrect = 0
   public numIncorrect = 0
   
-
   // Accept & Deny buttons
   public acceptButton: Phaser.GameObjects.Text
   public denyButton: Phaser.GameObjects.Text
   public scoreText: Phaser.GameObjects.Text
+
+    // Required unique key. Otherwise an error is thrown. 
+    constructor ()
+    {
+        super({ key: 'Game' });
+    }
+  
 
   create() {
     // Create Email Object
@@ -65,6 +73,12 @@ export default class Game extends Phaser.Scene {
     } else {
       this.numIncorrect++
       this.lives.decrementLife()
+    
+      // Check if this dude is headed to the Shadow Realm
+      if(this.lives.numLives == 0){
+        this.scene.start('shadowRealm');
+      }
+
     }
     this.scoreText.setText(
       `Correct: ${this.numCorrect}\nIncorrect: ${this.numIncorrect}`
@@ -74,4 +88,6 @@ export default class Game extends Phaser.Scene {
     this.currEmailIndex = (this.currEmailIndex + 1) % this.emailData.length
     this.email.setNewEmail(this.emailData[this.currEmailIndex])
   }
+
+
 }

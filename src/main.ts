@@ -1,5 +1,6 @@
 import Phaser from 'phaser'
 import Game from './scenes/Game'
+import shadowRealm from './scenes/shadowRealm'
 import { Constants } from './utils/Constants'
 
 const config = {
@@ -7,7 +8,7 @@ const config = {
   height: Constants.WINDOW_HEIGHT,
   pixelArt: true,
   type: Phaser.AUTO,
-  scene: [Game],
+  scene: [Game, shadowRealm],
   scale: {
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
