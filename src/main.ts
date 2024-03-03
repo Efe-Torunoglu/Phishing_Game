@@ -1,6 +1,6 @@
 import Phaser from 'phaser'
-import Game from './src/scenes/Game'
-import { Constants } from './src/utils/Constants'
+import Game from './scenes/Game'
+import { Constants } from './utils/Constants'
 
 const config = {
   width: Constants.WINDOW_WIDTH,

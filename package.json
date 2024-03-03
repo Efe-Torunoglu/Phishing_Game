@@ -1,19 +1,21 @@
 {
-    "name": "name",
-    "description": "description",
-    "authors": "author",
-    "version": "1.0.0",
-    "scripts": {
-        "build": "npx esbuild index.ts --bundle --sourcemap --outfile=build/index.js",
-        "dev": "npx concurrently \"npx live-server --no-browser\" \"npm run build -- --watch\""
-    },
-    "dependencies": {
-        "@esotericsoftware/spine-phaser": "~4.1.31",
-        "phaser": "3.60.0"
-    },
-    "devDependencies": {
-        "concurrently": "^7.6.0",
-        "esbuild": "0.17.17",
-        "live-server": "^1.1.0"
-    }
+  "name": "name",
+  "description": "description",
+  "authors": "author",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc && vite build",
+    "dev": "vite"
+  },
+  "dependencies": {
+    "@esotericsoftware/spine-phaser": "~4.1.31",
+    "phaser": "3.60.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "eslint": "^8.25.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0"
+  }
 }
