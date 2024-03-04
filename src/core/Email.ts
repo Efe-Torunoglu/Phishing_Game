@@ -1,5 +1,5 @@
 import Game from '../scenes/Game'
-import { EmailData } from '../utils/Constants'
+import { Constants, EmailData } from '../utils/Constants'
 
 export default class Email {
   // Variables
@@ -19,7 +19,9 @@ export default class Email {
       200,
       `Subject: ${emailData.subjectLine}`
     )
-    this.bodyText = this.game.add.text(100, 250, emailData.body)
+    this.bodyText = this.game.add
+      .text(100, 250, emailData.body)
+      .setWordWrapWidth(Constants.WINDOW_WIDTH - 150)
   }
 
   // Setter Method
