@@ -147,6 +147,7 @@ export default class Game extends Phaser.Scene {
 
   sendPlayerToShadowRealm() {
     // Reset
+    this.isDisplayingPopup = false
     this.difficultyLevel = 0
     this.progressMeter.setMaxValue(0)
     this.progressMeter.setCurrValue(0)
